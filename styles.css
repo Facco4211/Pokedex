@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+
+  background-image: url(https://i.pinimg.com/originals/14/b8/c6/14b8c685dd2747a940b71c3742796927.jpg);
+}
+.cartao-pokemon {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 250px;
+  vertical-align: top;
+}
+.cartao-pokemon img {
+  width: 100px;
+}
+.nome-pokemon {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.info-pokemon {
+  text-align: left;
+  margin-top: 10px;
+}
+.info-pokemon p {
+  margin: 5px 0;
+}
+.botoes {
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
