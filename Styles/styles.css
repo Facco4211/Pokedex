@@ -3,7 +3,26 @@ body {
   background-color: #ffffff;
   text-align: center;
   margin: 0;
-  padding: 20px;
+}
+header{
+  background-color: #ff0000;
+  display: flex;
+  justify-content: space-around;
+
+  .links{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+  }
+    a:hover{
+    text-decoration: none;
+    color: rgb(207, 207, 207);
+  }
 }
 
 /* Container principal */
@@ -84,3 +103,31 @@ button:disabled {
   color: #999;
   cursor: not-allowed;
 }
+.tipo {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: white;
+  margin-right: 5px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.tipo-fire { background-color: #F08030; }
+.tipo-water { background-color: #6890F0; }
+.tipo-grass { background-color: #78C850; }
+.tipo-electric { background-color: #F8D030; color: black; }
+.tipo-psychic { background-color: #F85888; }
+.tipo-ice { background-color: #98D8D8; color: black; }
+.tipo-dragon { background-color: #7038F8; }
+.tipo-dark { background-color: #705848; }
+.tipo-fairy { background-color: #EE99AC; }
+.tipo-normal { background-color: #A8A878; }
+.tipo-fighting { background-color: #C03028; }
+.tipo-flying { background-color: #A890F0; }
+.tipo-poison { background-color: #A040A0; }
+.tipo-ground { background-color: #E0C068; color: black; }
+.tipo-rock { background-color: #B8A038; }
+.tipo-bug { background-color: #A8B820; }
+.tipo-ghost { background-color: #705898; }
+.tipo-steel { background-color: #B8B8D0; color: black; }

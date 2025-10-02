@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+   <link rel="stylesheet" href="../Styles/detalhes.css" />
+  <title>Detalhes do Pokémon</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .container { max-width: 600px; margin: auto; text-align: center; }
+    img { width: 200px; }
+  </style>
+</head>
+<body>
+    <header>
+      <img src="../imgs/Logo.png" alt="">
+      <a href="index.html">Home</a>
+      <a href="pokedex.html">Pokedex</a>
+    </header>
+  <div class="container">
+    <h1 id="nome"></h1>
+    <img id="imagem" alt="Pokemon">
+    <p id="tipos"></p>
+    <p id="altura"></p>
+    <p id="peso"></p>
+    <p id="habilidades"></p>
+    <ul id="stats"></ul>
+    <ul id="ataques"></ul>
+  </div>
+
+  <script>
+    // Pega o parâmetro da URL (?pokemon=bulbasaur)
+    const params = new URLSearchParams(window.location.search);
+    const nomePokemon = params.get("pokemon");
+
+    // Busca os dados desse Pokémon
+    fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
+      .then(res => res.json())
+      .then(dados => {
+        document.getElementById("nome").textContent = dados.name.toUpperCase();
+        document.getElementById("imagem").src = dados.sprites.front_default;
+
+        document.getElementById("tipos").textContent =
+          "Tipos: " + dados.types.map(t => t.type.name).join(", ");
+
+        document.getElementById("altura").textContent = "Altura: " + dados.height;
+        document.getElementById("peso").textContent = "Peso: " + dados.weight;
+
+        document.getElementById("habilidades").textContent =
+          "Habilidades: " + dados.abilities.map(h => h.ability.name).join(", ");
+
+        let statsUl = document.getElementById("stats");
+        statsUl.textContent = "Stats:";
+        dados.stats.forEach(s => {
+          let li = document.createElement("li");
+          li.textContent = `${s.stat.name}: ${s.base_stat}`;
+          statsUl.appendChild(li);
+        });
+
+        let ataquesUl = document.getElementById("ataques");
+        ataquesUl.textContent = "Ataques:";
+        dados.moves.slice(0, 10).forEach(m => {
+          let li = document.createElement("li");
+          li.textContent = m.move.name;
+          ataquesUl.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
