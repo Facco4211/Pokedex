@@ -1,42 +1,86 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   text-align: center;
-
-  background-image: url(https://i.pinimg.com/originals/14/b8/c6/14b8c685dd2747a940b71c3742796927.jpg);
+  margin: 0;
+  padding: 20px;
 }
+
+/* Container principal */
+#container-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Cada card do Pokémon */
 .cartao-pokemon {
-  display: inline-block;
-  background-color: white;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  width: 250px;
-  vertical-align: top;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.cartao-pokemon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do Pokémon */
 .cartao-pokemon img {
   width: 100px;
+  height: 100px;
 }
+
+/* Nome */
 .nome-pokemon {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 10px;
   text-transform: uppercase;
+  color: #333;
 }
+
+/* Área para informações extras (se quiser usar depois) */
 .info-pokemon {
   text-align: left;
   margin-top: 10px;
 }
+
 .info-pokemon p {
   margin: 5px 0;
+  font-size: 14px;
 }
+
+/* Botões de navegação */
 .botoes {
-  margin-top: 20px;
+  margin-top: 30px;
 }
+
 button {
   padding: 10px 20px;
   margin: 5px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffcb05; /* cor tipo Pokémon */
+  color: #3b4cca;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #f2b800;
+}
+
+button:disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
 }
